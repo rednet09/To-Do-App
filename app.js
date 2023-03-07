@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
+const port = 5000;
 
 let newItems = ["buy food", "make food", "eat food"];
 let workItems = [];
@@ -47,6 +48,6 @@ app.get("/about", function(req, res){
   res.render("about");
 })
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || port, function () {
   console.log("server started on port 3000");
 });
